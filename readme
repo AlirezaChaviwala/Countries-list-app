@@ -1,0 +1,5 @@
+--Written in JS with HTML DOM manupulation
+--Integrated API from restcountries to pull data of countries
+
+--Hosted Netlify link
+https://countries-list-ui.netlify.app/
