@@ -10,7 +10,7 @@ container.append(title);
 
 let promise = new Promise((resolve, reject) => {
         var req = new XMLHttpRequest();
-        req.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+        req.open('GET', 'https://restcountries.com/v3.1/all', true);
         req.send();
         req.onload = function() {
             if (req.status == 200) {
@@ -47,12 +47,12 @@ let promise = new Promise((resolve, reject) => {
                 let cardheader = document.createElement('div');
                 cardheader.classList.add('card-header');
                 cardheader.setAttribute('id', 'ch')
-                cardheader.innerText = result[j].name;
+                cardheader.innerText = result[j].name.common;
 
                 let fimage = document.createElement('img');
                 fimage.classList.add('card-img-top');
                 fimage.setAttribute('id', 'im')
-                fimage.src = result[j].flag;
+                fimage.src = result[j].flags.png;
 
                 let cardbody = document.createElement('div');
                 cardbody.classList.add('card-body');
@@ -70,7 +70,7 @@ let promise = new Promise((resolve, reject) => {
                 countrycode.textContent = 'Country Codes: ';
                 let code = document.createElement('div');
                 code.setAttribute('class', 'badge');
-                code.innerText = `${result[j].alpha2Code},${result[j].alpha3Code}`;
+                code.innerText = `${result[j].cca2},${result[j].cca3}`;
                 countrycode.append(code);
 
 
